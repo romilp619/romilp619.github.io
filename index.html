@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Romil Patel — Cybersecurity researcher, DFIR builder, penetration tester, and creator of PHANTOM DFIR and BountyForge Toolkit.">
+  <meta name="theme-color" content="#080b0b">
+  <meta property="og:title" content="Romil Patel — Cybersecurity Researcher">
+  <meta property="og:description" content="Evidence-first security research, DFIR engineering, threat hunting, and offensive tooling.">
+  <meta property="og:image" content="assets/forensic-hero.png">
+  <title>Romil Patel — Cybersecurity Researcher</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23080b0b%22/><path d=%22M25 26h30c13 0 21 7 21 19 0 9-5 15-13 18l16 13H62L49 65h-8v11H25zm16 13v13h13c5 0 8-2 8-7s-3-6-8-6z%22 fill=%22%23c7ff41%22/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="signal-canvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Romil Patel — Home">
+      <span class="brand-mark">RP</span>
+      <span class="brand-copy"><strong>ROMIL PATEL</strong><small>SECURITY RESEARCH</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#vapt-ops">VAPT Ops</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#credentials">Credentials</a>
+      <span class="nav-platforms" aria-label="Cybersecurity training profiles">
+        <a class="platform-link pentesterlab-link" href="https://pentesterlab.com/profile/Romil_Patel" target="_blank" rel="noreferrer" aria-label="Romil Patel on PentesterLab">
+          <i>PL</i><span>PentesterLab</span><b>↗</b>
+        </a>
+        <a class="platform-link tryhackme-link" href="https://tryhackme.com/p/romil0xsec" target="_blank" rel="noreferrer" aria-label="Romil Patel on TryHackMe">
+          <i>THM</i><span>TryHackMe</span><b>↗</b>
+        </a>
+      </span>
+      <a class="nav-cta" href="#contact">Open channel <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/forensic-hero.png" alt="Abstract forensic evidence network with chartreuse and blue signal paths">
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR VAPT &amp; OFFENSIVE SECURITY</div>
+        <p class="terminal-line"><span>romil@offsec</span>:~$ assess --authorized<span class="terminal-cursor">_</span></p>
+        <h1 id="hero-title">I find weaknesses<br><em>before attackers do.</em></h1>
+        <p class="hero-lede">VAPT practitioner and security researcher focused on web applications, attack-surface intelligence, vulnerability validation, and evidence-backed reporting.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#vapt-ops"><span>View VAPT operations</span><b>↘</b></a>
+          <a class="button button-ghost" href="https://github.com/romilp619" target="_blank" rel="noreferrer"><span>GitHub profile</span><b>↗</b></a>
+        </div>
+      </div>
+      <div class="evidence-core" aria-label="Interactive three-dimensional forensic evidence visualization">
+        <canvas id="evidence-core-canvas"></canvas>
+        <div class="core-hud core-hud-top"><span>ATTACK SURFACE / 01</span><b>AUTHORIZED</b></div>
+        <div class="core-hud core-hud-bottom"><span>MOVE POINTER TO ENUMERATE</span><b>EVIDENCE-LED</b></div>
+        <i class="core-corner corner-a"></i><i class="core-corner corner-b"></i><i class="core-corner corner-c"></i><i class="core-corner corner-d"></i>
+      </div>
+      <aside class="identity-card" aria-label="Profile summary">
+        <div class="identity-head">
+          <span class="identity-avatar"><img src="assets/romil-profile-red.png" alt="Romil Patel"></span>
+          <div><strong>Romil Patel</strong><span>Ahmedabad, India</span></div>
+          <span class="verified" title="Profile verified from LinkedIn and GitHub">✓</span>
+        </div>
+        <dl class="identity-grid">
+          <div><dt>FOCUS</dt><dd>VAPT / WEBSEC</dd></div>
+          <div><dt>MODE</dt><dd>Evidence-first</dd></div>
+          <div><dt>COMMUNITY</dt><dd>6.7K+</dd></div>
+          <div><dt>CREDENTIALS</dt><dd>20</dd></div>
+        </dl>
+        <div class="identity-foot"><span>Microsoft Student Ambassador Alumnus</span><strong id="operator-badge" class="operator-badge" hidden>OPERATOR VERIFIED</strong><i></i></div>
+      </aside>
+      <div class="hero-index"><span>01</span><i></i><span>FIELD NOTES / 2026</span></div>
+    </section>
+
+    <section class="proof-strip" aria-label="Key proof points">
+      <div class="proof-item"><span class="proof-number" data-count="80">0</span><sup>+</sup><p>Secret and exposure patterns</p></div>
+      <div class="proof-item"><span class="proof-number" data-count="274">0</span><sup></sup><p>PortSwigger lab patterns mapped</p></div>
+      <div class="proof-item"><span class="proof-number" data-count="20">0</span><sup>+</sup><p>Professional credentials</p></div>
+      <div class="proof-item"><span class="proof-number" data-count="6722">0</span><sup></sup><p>Cybersecurity community followers</p></div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="section-kicker reveal"><span>02</span> OPERATOR PROFILE</div>
+      <div class="about-grid">
+        <div class="about-title reveal">
+          <p class="micro-label">ABOUT / ROMIL_PATEL</p>
+          <h2>Offense with discipline.<br>Findings with <em>verifiable evidence.</em></h2>
+        </div>
+        <div class="about-copy reveal">
+          <p class="lead-copy">I am a VAPT practitioner, security researcher, CTF player, and builder focused on finding exploitable weaknesses, validating real impact, and reporting them with evidence.</p>
+          <p>My work spans web application testing, attack-surface discovery, JavaScript intelligence, bug bounty research, vulnerability validation, cloud platforms, and digital forensics. I approach offensive security with scope discipline, reproducibility, and clear remediation.</p>
+          <div class="quote-block">
+            <span>OPERATING PRINCIPLE</span>
+            <blockquote>“A scanner result is only a lead. A finding needs reproducible evidence, impact, and a fix.”</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="capability-grid reveal">
+        <article><span>01</span><h3>VAPT &amp; Web Security</h3><p>Authorized testing, OWASP methodology, manual validation, impact analysis, and remediation guidance.</p></article>
+        <article><span>02</span><h3>Recon &amp; Attack Surface</h3><p>Subdomains, live services, endpoints, parameters, JavaScript intelligence, and exposure mapping.</p></article>
+        <article><span>03</span><h3>Vulnerability Validation</h3><p>Hypothesis-driven testing, false-positive elimination, CWE/CVSS classification, and reproducible evidence.</p></article>
+        <article><span>04</span><h3>DFIR &amp; Engineering</h3><p>Memory, disk and PCAP analysis, Python automation, multi-agent systems, MCP tooling, and secure reporting.</p></article>
+      </div>
+    </section>
+
+    <section id="vapt-ops" class="section vapt-section">
+      <div class="section-heading reveal">
+        <div><div class="section-kicker"><span>03</span> OFFENSIVE SECURITY / VAPT</div><h2>VAPT first.<br><em>Proof over noise.</em></h2></div>
+        <p>No fake scanners. This section explains how I approach authorized web and network testing: map the surface, form hypotheses, validate impact, remove false positives, and report fixes clearly.</p>
+      </div>
+      <div class="vapt-ops-shell reveal">
+        <div class="ops-terminal">
+          <div class="terminal-bar"><i></i><i></i><i></i><span>romil@vapt-methodology</span></div>
+          <div class="ops-terminal-body">
+            <p><span class="prompt">$</span> methodology --mode authorized --output evidence</p>
+            <ol class="ops-chain">
+              <li><span>01</span><b>Scope & Rules</b><p>Confirm authorization, target boundaries, test windows, forbidden actions, and reporting channel.</p></li>
+              <li><span>02</span><b>Recon & Mapping</b><p>Discover subdomains, live hosts, exposed services, tech stack, endpoints, parameters, and JavaScript clues.</p></li>
+              <li><span>03</span><b>Manual Testing</b><p>Prioritize OWASP Top 10, access control, auth/session issues, IDOR, SSRF, file upload, injection, and business logic.</p></li>
+              <li><span>04</span><b>Impact Validation</b><p>Turn weak scanner leads into reproducible findings with evidence, severity, affected assets, and false-positive checks.</p></li>
+              <li><span>05</span><b>Report & Retest</b><p>Deliver proof, risk, CWE/CVSS mapping, remediation steps, and retest status in a clean professional format.</p></li>
+            </ol>
+          </div>
+        </div>
+        <aside class="ops-scope-panel">
+          <p class="micro-label">VAPT TARGET AREAS</p>
+          <div class="scope-grid">
+            <article><span>WEB</span><b>OWASP testing</b><p>Auth, access control, injection, file handling, security headers, misconfig, and business logic.</p></article>
+            <article><span>RECON</span><b>Attack surface</b><p>Subdomain discovery, endpoint mapping, JS analysis, screenshots, service fingerprinting, and exposure review.</p></article>
+            <article><span>API</span><b>Abuse paths</b><p>BOLA/IDOR, broken auth, mass assignment, rate limits, sensitive data, and object-level checks.</p></article>
+            <article><span>REPORT</span><b>Evidence package</b><p>Clear reproduction, impact, remediation, references, screenshots, and retest-ready notes.</p></article>
+          </div>
+        </aside>
+      </div>
+      <div class="ops-proof-grid reveal">
+        <a href="https://github.com/romilp619/BountyForge-Toolkit" target="_blank" rel="noreferrer"><span>FLAGSHIP TOOL</span><b>BountyForge Toolkit</b><p>Recon-to-report pipeline built for bug bounty and authorized VAPT workflows.</p></a>
+        <a href="https://tryhackme.com/p/romil0xsec" target="_blank" rel="noreferrer"><span>TRAINING PATH</span><b>TryHackMe</b><p>Jr Penetration Tester and hands-on offensive security practice.</p></a>
+        <a href="https://pentesterlab.com/profile/Romil_Patel" target="_blank" rel="noreferrer"><span>WEBSEC PRACTICE</span><b>PentesterLab</b><p>Web vulnerability learning profile and practical exploitation patterns.</p></a>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <div class="section-heading reveal">
+        <div><div class="section-kicker"><span>04</span> SELECTED OPERATIONS</div><h2>Two systems.<br><em>One evidence discipline.</em></h2></div>
+        <p>Only the work that best represents how I think, build, and investigate.</p>
+      </div>
+
+      <article class="project project-phantom reveal">
+        <div class="project-topline"><span>CASE FILE // 002</span><span class="repo-intel" data-repo="romilp619/Phantom-DFIR">GITHUB / CONNECTING</span><span class="live-pill"><i></i> OPEN SOURCE</span></div>
+        <div class="project-grid">
+          <div class="project-copy">
+            <p class="project-type">MULTI-AGENT DIGITAL FORENSICS</p>
+            <h3>PHANTOM<br><span>DFIR</span></h3>
+            <p class="project-decode">Parallel Hypothesis Analysis with Multi-agent Threat Hunting Overlay Network</p>
+            <p class="project-summary">An adversarial, self-verifying forensic agent that generates hypotheses, gathers evidence, challenges weak claims, clears false positives, and produces traceable reports across memory, disk, and network evidence.</p>
+            <ul class="project-tags" aria-label="PHANTOM technologies"><li>Python</li><li>LangGraph</li><li>Volatility 2/3</li><li>Sleuth Kit</li><li>tshark</li><li>Ollama</li><li>MCP</li></ul>
+            <a class="project-link" href="https://github.com/romilp619/Phantom-DFIR" target="_blank" rel="noreferrer">Inspect repository <span>↗</span></a>
+          </div>
+          <div class="project-visual" aria-label="PHANTOM architecture visualization">
+            <div class="scanline"></div>
+            <div class="visual-label"><span>ADVERSARIAL VERIFICATION LOOP</span><b>ACTIVE</b></div>
+            <div class="agent-orbit">
+              <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+              <div class="core-node"><small>PHANTOM</small><strong>97%</strong><span>VERIFIED</span></div>
+              <div class="satellite sat-1">COLLECTOR</div><div class="satellite sat-2">INVESTIGATOR</div><div class="satellite sat-3">SKEPTIC</div><div class="satellite sat-4">REPORTER</div>
+            </div>
+            <div class="evidence-feed">
+              <p><time>00:14:21</time><span class="ok">[OK]</span> 19 sources confirmed</p>
+              <p><time>00:14:23</time><span class="warn">[CHECK]</span> path reputation challenged</p>
+              <p><time>00:14:25</time><span class="ok">[CLEAR]</span> benign process verified</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-story"><div><span>01 / PROBLEM</span><p>Single-pass AI analysis can turn weak assumptions into forensic claims.</p></div><div><span>02 / EVIDENCE</span><p>Memory, disk, PCAP, process paths, services, timelines, and independent tool output.</p></div><div><span>03 / HYPOTHESIS</span><p>Adversarial agents can challenge findings before they reach the final report.</p></div><div><span>04 / VERIFICATION</span><p>Ground-truth benchmarks and multi-source confirmation test every conclusion.</p></div><div><span>05 / RESULT</span><p>Five of five cases reproduced with a 97% average adjusted score.</p></div></div>
+        <div class="project-metrics"><div><strong>5/5</strong><span>cases reproduced</span></div><div><strong>97%</strong><span>average adjusted score</span></div><div><strong>0</strong><span>unsupported conclusions</span></div><div><strong>3</strong><span>evidence classes</span></div></div>
+      </article>
+
+      <article class="project project-bounty reveal">
+        <div class="project-topline"><span>CASE FILE // 001</span><span class="repo-intel" data-repo="romilp619/BountyForge-Toolkit">GITHUB / CONNECTING</span><span class="live-pill"><i></i> AUTHORIZED USE</span></div>
+        <div class="project-grid reverse">
+          <div class="project-visual pipeline-visual" aria-label="BountyForge eight-stage pipeline visualization">
+            <div class="scanline"></div>
+            <div class="visual-label"><span>RECON-TO-REPORT PIPELINE</span><b>8 STAGES</b></div>
+            <ol class="pipeline">
+              <li><span>01</span><div><b>SUBDOMAINS</b><small>subfinder · crt.sh</small></div><i></i></li>
+              <li><span>02</span><div><b>LIVE HOSTS</b><small>httpx</small></div><i></i></li>
+              <li><span>03</span><div><b>PORTS</b><small>naabu · nmap</small></div><i></i></li>
+              <li><span>04</span><div><b>DIRECTORIES</b><small>dirsearch</small></div><i></i></li>
+              <li><span>05</span><div><b>URLS</b><small>gau · wayback</small></div><i></i></li>
+              <li><span>06</span><div><b>JS INTEL</b><small>80+ patterns</small></div><i></i></li>
+              <li><span>07</span><div><b>NUCLEI</b><small>templates</small></div><i></i></li>
+              <li><span>08</span><div><b>REPORT</b><small>JSON · HTML · TXT</small></div></li>
+            </ol>
+          </div>
+          <div class="project-copy">
+            <p class="project-type">AUTOMATED BUG BOUNTY INTELLIGENCE</p>
+            <h3>BOUNTYFORGE<br><span>TOOLKIT</span></h3>
+            <p class="project-decode">JSHunter v2.3 — authorized recon, JavaScript analysis, and methodology intelligence.</p>
+            <p class="project-summary">A resumable one-command pipeline from subdomain discovery to vulnerability hypotheses, with secret redaction, source-map analysis, DOM XSS data-flow checks, HackTricks intelligence, PortSwigger lab patterns, and structured reporting.</p>
+            <ul class="project-tags" aria-label="BountyForge technologies"><li>Python</li><li>Nuclei</li><li>Burp</li><li>HackTricks</li><li>PortSwigger</li><li>httpx</li><li>nmap</li></ul>
+            <a class="project-link" href="https://github.com/romilp619/BountyForge-Toolkit" target="_blank" rel="noreferrer">Inspect repository <span>↗</span></a>
+          </div>
+        </div>
+        <div class="case-story"><div><span>01 / PROBLEM</span><p>Recon data is fragmented across tools, noisy outputs, and disconnected methodologies.</p></div><div><span>02 / EVIDENCE</span><p>Subdomains, services, URLs, parameters, JavaScript, source maps, Burp history, and templates.</p></div><div><span>03 / HYPOTHESIS</span><p>A resumable evidence pipeline can surface higher-value manual testing paths.</p></div><div><span>04 / VERIFICATION</span><p>Secret redaction, checkpoints, false-positive guidance, and authorized scope controls.</p></div><div><span>05 / RESULT</span><p>Eight stages, 80+ patterns, and 274 mapped PortSwigger lab methodologies.</p></div></div>
+        <div class="project-metrics"><div><strong>80+</strong><span>secret patterns</span></div><div><strong>274</strong><span>lab patterns mapped</span></div><div><strong>25+</strong><span>framework detections</span></div><div><strong>8</strong><span>pipeline stages</span></div></div>
+      </article>
+    </section>
+
+    <section id="experience" class="section experience-section">
+      <div class="section-heading reveal">
+        <div><div class="section-kicker"><span>05</span> FIELD EXPERIENCE</div><h2>Built in the lab.<br><em>Tested in the field.</em></h2></div>
+        <p>Independent research, hands-on platforms, community leadership, and continuous learning.</p>
+      </div>
+      <div class="timeline reveal">
+        <article class="timeline-item current"><div class="time-rail"><i></i><span>2024—NOW</span></div><div class="timeline-card"><p>FREELANCE · REMOTE</p><h3>Security Researcher</h3><h4>Bugcrowd</h4><p>Vulnerability assessment, penetration testing, and responsible bug bounty research across authorized scopes.</p><div class="mini-tags"><span>VAPT</span><span>Bug Bounty</span><span>Web Security</span></div></div></article>
+        <article class="timeline-item current"><div class="time-rail"><i></i><span>2024—NOW</span></div><div class="timeline-card"><p>FREELANCE</p><h3>Security Researcher</h3><h4>HackerOne</h4><p>Security testing and vulnerability research with an emphasis on reproducibility, impact, and responsible disclosure.</p><div class="mini-tags"><span>Recon</span><span>Validation</span><span>Disclosure</span></div></div></article>
+        <article class="timeline-item"><div class="time-rail"><i></i><span>2023—NOW</span></div><div class="timeline-card"><p>PART-TIME</p><h3>CTF Player</h3><h4>TryHackMe</h4><p>Hands-on offensive and defensive security labs spanning VAPT, threat and vulnerability management, and penetration testing.</p><div class="mini-tags"><span>CTF</span><span>Red Teaming</span><span>Threat Hunting</span></div></div></article>
+        <article class="timeline-item"><div class="time-rail"><i></i><span>2023—NOW</span></div><div class="timeline-card"><p>CORE TEAM · AHMEDABAD</p><h3>Community Organizer</h3><h4>The Hackers Meetup</h4><p>Core-team contributor supporting cybersecurity events, technical community building, collaboration, and operations.</p><div class="mini-tags"><span>Leadership</span><span>Community</span><span>Events</span></div></div></article>
+        <article class="timeline-item"><div class="time-rail"><i></i><span>2023</span></div><div class="timeline-card"><p>INTERNSHIP · REMOTE</p><h3>Cyber Security Intern</h3><h4>Cyber Secured India</h4><p>Worked with Linux fundamentals, Burp Suite, OWASP Top 10, Metasploit, web application security, Nmap, and PortSwigger labs.</p><div class="mini-tags"><span>Burp Suite</span><span>OWASP</span><span>Nmap</span></div></div></article>
+      </div>
+
+      <div class="community-card reveal">
+        <div class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div><p>VOLUNTEERING · JUL 2024—2026</p><h3>Microsoft Student Ambassador Alumnus</h3><span>Science &amp; Technology</span><p>Contributed to student technology community work, helped fellow learners, and developed practical career skills through the global Microsoft student network.</p></div>
+        <div class="community-meta"><span>COMMUNITY NODE</span><b>ALUMNI</b></div>
+      </div>
+
+      <div class="earlier-grid reveal">
+        <article><span>EARLIER RESEARCH</span><h3>Cybersecurity Research Intern</h3><p>SISTMR Australia, Ahmedabad — ethical hacking exercises, packet capture, network analysis, and password-security research using Kali Linux, Wireshark, Ncrack, and Ettercap.</p></article>
+        <article><span>EARLIER DEVELOPMENT</span><h3>Web Development Intern</h3><p>Stackss, Ahmedabad — JavaScript, React, Node.js, and hands-on development for the Adfinder project.</p></article>
+        <article><span>CAMPUS LEADERSHIP</span><h3>HackerEarth Campus Ambassador</h3><p>Promoted technical learning, organized events and hackathons, encouraged coding challenges, and shared platform feedback.</p></article>
+      </div>
+    </section>
+
+    <section class="section skills-section">
+      <div class="section-kicker reveal"><span>06</span> TECHNICAL ARSENAL</div>
+      <div class="skills-layout">
+        <div class="skills-intro reveal"><h2>Tools change.<br><em>Methodology compounds.</em></h2><p>A working stack across investigation, exploitation, engineering, cloud, and communication.</p></div>
+        <div class="skill-groups reveal">
+          <article><div><span>01</span><h3>Forensics &amp; Threat Hunting</h3></div><p>Volatility 2/3 · Sleuth Kit · tshark · Wireshark · Plaso · ClamAV · Memory Analysis · Disk/E01 · PCAP · Timeline Reconstruction · MITRE ATT&amp;CK</p></article>
+          <article><div><span>02</span><h3>Offensive Security</h3></div><p>Burp Suite · Nmap · Metasploit · Nuclei · subfinder · httpx · naabu · dirsearch · OWASP Top 10 · Web App Security · VAPT · Bug Bounty</p></article>
+          <article><div><span>03</span><h3>Engineering</h3></div><p>Python · JavaScript · React · Node.js · Java · HTML · CSS · MySQL · FastAPI · LangGraph · MCP · Git · JSON · Markdown</p></article>
+          <article><div><span>04</span><h3>Platforms &amp; Cloud</h3></div><p>Kali Linux · SANS SIFT · WSL2 · Ollama · Google Cloud · Microsoft Azure · Oracle Cloud · Salesforce · VS Code · PyCharm · Jupyter</p></article>
+        </div>
+      </div>
+      <div class="ecosystem-ticker" aria-label="Technology ecosystem"><div><span>GOOGLE CLOUD</span><i></i><span>MICROSOFT LEARN</span><i></i><span>SALESFORCE</span><i></i><span>TRYHACKME</span><i></i><span>BUGCROWD</span><i></i><span>HACKERONE</span><i></i><span>SANS SIFT</span><i></i><span>GOOGLE CLOUD</span><i></i><span>MICROSOFT LEARN</span><i></i></div></div>
+    </section>
+
+    <section id="credentials" class="section credentials-section">
+      <div class="section-heading reveal">
+        <div><div class="section-kicker"><span>07</span> VERIFIED LEARNING</div><h2>Credentials,<br><em>not decoration.</em></h2></div>
+        <p>Twenty milestones across cybersecurity, cloud, AI, software engineering, and community learning.</p>
+      </div>
+      <div class="credential-tools reveal">
+        <label><span>SEARCH CREDENTIAL VAULT</span><input id="credential-search" type="search" placeholder="Search issuer, certificate, or category…" autocomplete="off"></label>
+        <div class="credential-filters" role="group" aria-label="Filter credentials by category"><button class="active" type="button" data-filter="all">All 20</button><button type="button" data-filter="cyber">Cyber</button><button type="button" data-filter="cloud">Cloud</button><button type="button" data-filter="ai/ml">AI / ML</button><button type="button" data-filter="code">Code</button></div>
+        <span id="credential-count">20 credentials visible</span>
+      </div>
+      <div class="credential-featured reveal">
+        <article data-category="cyber"><span class="credential-id">CERT / 2026</span><div class="cert-shield">CNSP</div><h3>Certified Network Security Practitioner</h3><p>The SecOps Group</p><small>Issued March 2026</small></article>
+        <article data-category="cyber"><span class="credential-id">PATH / THM</span><div class="cert-shield">JRPT</div><h3>Jr Penetration Tester</h3><p>TryHackMe</p><small>Issued June 2024</small></article>
+        <article data-category="ai/ml"><span class="credential-id">CERT / MS</span><div class="cert-shield">AI-900</div><h3>Microsoft Certified: Azure AI Fundamentals</h3><p>Microsoft</p><small>Issued September 2023</small></article>
+      </div>
+      <div class="credential-list reveal">
+        <article><span>04</span><div><h3>Introduction to Cybersecurity</h3><p>TryHackMe · Jun 2024</p></div><b>CYBER</b></article>
+        <article><span>05</span><div><h3>Pre Security</h3><p>TryHackMe · Jun 2024</p></div><b>CYBER</b></article>
+        <article><span>06</span><div><h3>LinkedIn Content and Creative Design</h3><p>LinkedIn · May 2023</p></div><b>DESIGN</b></article>
+        <article><span>07</span><div><h3>LinkedIn Marketing Strategy</h3><p>LinkedIn · May 2023</p></div><b>STRATEGY</b></article>
+        <article><span>08</span><div><h3>LinkedIn Marketing Solutions Fundamentals</h3><p>LinkedIn · May 2023</p></div><b>MARKETING</b></article>
+        <article><span>09</span><div><h3>Oracle Cloud Infrastructure 2021 Certified Associate</h3><p>Oracle · Jun 2022</p></div><b>CLOUD</b></article>
+        <article><span>10</span><div><h3>Indian Army Cyber Security Hackathon</h3><p>Information Sharing and Analysis Center · Feb 2022</p></div><b>CYBER</b></article>
+        <article><span>11</span><div><h3>Code in Place</h3><p>Stanford University</p></div><b>CODE</b></article>
+        <article><span>12</span><div><h3>AWS Summit India</h3><p>Amazon Web Services · Jul 2021</p></div><b>CLOUD</b></article>
+        <article><span>13</span><div><h3>SAR Data Processing</h3><p>ISRO · Jul 2021</p></div><b>DATA</b></article>
+        <article><span>14</span><div><h3>Machine Learning Essentials for Business and Technical Decision Makers</h3><p>Amazon Web Services · May 2021</p></div><b>AI/ML</b></article>
+        <article><span>15</span><div><h3>Guinness World Record Event</h3><p>HCL GUVI · May 2021</p></div><b>EVENT</b></article>
+        <article><span>16</span><div><h3>Introduction to Machine Learning: Art of the Possible</h3><p>Amazon Web Services · Apr 2021</p></div><b>AI/ML</b></article>
+        <article><span>17</span><div><h3>Planning a Machine Learning Project</h3><p>Amazon Web Services · Apr 2021</p></div><b>AI/ML</b></article>
+        <article><span>18</span><div><h3>Python and Flask Framework</h3><p>Udemy · Apr 2021</p></div><b>CODE</b></article>
+        <article><span>19</span><div><h3>Build Face Recognition Application Using Python</h3><p>HCL GUVI · Apr 2021</p></div><b>AI/ML</b></article>
+        <article class="expired"><span>20</span><div><h3>Cyber Security Foundation Professional Certificate</h3><p>CertiProf · Apr 2021—Apr 2023</p></div><b>EXPIRED</b></article>
+      </div>
+    </section>
+
+    <section class="section education-section">
+      <div class="section-kicker reveal"><span>08</span> EDUCATION</div>
+      <div class="education-grid reveal">
+        <article><span>2021—2023</span><h3>Master’s Degree</h3><p>Computer Programming, Specific Applications</p><strong>GLS University</strong></article>
+        <article><span>2017—2020</span><h3>Bachelor in Computer Applications</h3><p>Computer Programming, Specific Applications · 7.26 CGPA</p><strong>Shri Chimanbhai Patel Institute of Computer Applications</strong></article>
+      </div>
+      <p class="education-note reveal">Academic activities included volunteering, debugging competition, treasure hunt, Django, and Ionic certifications.</p>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="contact-copy reveal">
+        <div class="section-kicker"><span>09</span> ESTABLISH CONNECTION</div>
+        <p class="micro-label">SECURE CHANNEL / OPEN</p>
+        <h2>Have a hard problem<br>hidden in the noise?</h2>
+        <p>Let’s talk about cybersecurity research, DFIR engineering, threat hunting, community work, or responsible collaboration.</p>
+        <div class="contact-actions">
+          <a class="button button-primary" href="https://www.linkedin.com/in/romilpatel1998/" target="_blank" rel="noreferrer"><span>Connect on LinkedIn</span><b>↗</b></a>
+          <a class="button button-ghost" href="https://github.com/romilp619" target="_blank" rel="noreferrer"><span>Follow on GitHub</span><b>↗</b></a>
+        </div>
+      </div>
+      <div class="contact-terminal reveal" aria-label="Contact terminal">
+        <div class="terminal-bar"><i></i><i></i><i></i><span>romil-secure-channel</span></div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> initiate --channel professional</p>
+          <p class="terminal-response">[+] identity: romil_patel</p>
+          <p class="terminal-response">[+] location: ahmedabad_india</p>
+          <p class="terminal-response">[+] modes: onsite | hybrid | remote</p>
+          <p class="terminal-response success">[✓] channel ready</p>
+          <p><span class="prompt">$</span> <span class="type-target" data-text="connect --via linkedin"></span><span class="terminal-cursor">_</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><span class="brand-mark">RP</span><p>Designed around evidence.<br>Built for the open web.</p></div>
+    <p>© <span id="year"></span> Romil Patel</p>
+    <div class="footer-links"><a href="https://github.com/romilp619" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/romilpatel1998/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="dossier.html" target="_blank">VAPT dossier ↗</a><a href="security.txt" target="_blank">Security.txt ↗</a><button class="ctf-trigger" type="button">[classified]</button><a href="#top">Back to top ↑</a></div>
+  </footer>
+
+  <div class="command-hint" aria-hidden="true"><kbd>/</kbd><span>quick navigate</span></div>
+  <button id="recruiter-toggle" class="recruiter-toggle" type="button"><span>RECRUITER MODE</span><b>R</b></button>
+  <dialog class="command-palette" aria-label="Quick navigation">
+    <div class="palette-head"><span>GO TO</span><button type="button" aria-label="Close quick navigation">ESC</button></div>
+    <label class="palette-search"><span>$</span><input class="command-input" type="text" placeholder="Type vapt, projects, skills, certs, recruiter, ctf…" autocomplete="off"></label>
+    <div class="palette-results"><a href="#vapt-ops" data-command="vapt offensive methodology"><span>01</span>VAPT operations</a><a href="#projects" data-command="projects work"><span>02</span>Selected operations</a><a href="#about" data-command="about profile"><span>03</span>Operator profile</a><a href="#experience" data-command="experience"><span>04</span>Field experience</a><a href="#credentials" data-command="certs credentials"><span>05</span>Credential vault</a><a href="#contact" data-command="contact"><span>06</span>Open channel</a><button type="button" data-command="recruiter"><span>07</span>Recruiter mode</button><button type="button" data-command="ctf challenge"><span>08</span>Classified challenge</button></div>
+  </dialog>
+  <dialog id="recruiter-dialog" class="recruiter-dialog" aria-label="Recruiter summary">
+    <div class="recruiter-head"><div><span>RECRUITER MODE / VAPT</span><h2>Romil Patel</h2><p>VAPT Practitioner · Security Researcher · Ahmedabad, India</p></div><button type="button" data-close-recruiter>×</button></div>
+    <div class="recruiter-summary"><section><span>PROFILE</span><p>Evidence-led offensive security practitioner focused on web application testing, attack-surface intelligence, manual vulnerability validation, and professional reporting.</p></section><section><span>CORE SKILLS</span><p>VAPT · OWASP Top 10 · Burp Suite · Nmap · Nuclei · Recon Automation · JavaScript Analysis · Python · Threat Validation · CVSS/CWE</p></section><section><span>EXPERIENCE</span><p>Security Researcher at Bugcrowd and HackerOne · CTF Player at TryHackMe · Core Team at The Hackers Meetup · Cyber Security Intern at Cyber Secured India.</p></section><section><span>FLAGSHIP WORK</span><p>BountyForge Toolkit — eight-stage recon-to-report pipeline. PHANTOM DFIR — adversarial self-verifying forensic agent with a 97% benchmark score.</p></section><section><span>CREDENTIALS</span><p>CNSP · TryHackMe Jr Penetration Tester · Pre Security · Introduction to Cybersecurity · Azure AI Fundamentals · Oracle Cloud Associate.</p></section><section><span>COMMUNITY</span><p>Microsoft Student Ambassador alumnus · 6.7K+ LinkedIn followers · Hackers Meetup core team.</p></section></div>
+    <div class="recruiter-actions"><a class="button button-primary" href="dossier.html" target="_blank"><span>Open VAPT dossier</span><b>↗</b></a><a class="button button-ghost" href="https://www.linkedin.com/in/romilpatel1998/" target="_blank" rel="noreferrer"><span>LinkedIn</span><b>↗</b></a></div>
+  </dialog>
+  <dialog id="ctf-challenge" class="ctf-dialog" aria-label="Hidden security challenge">
+    <div class="terminal-bar"><i></i><i></i><i></i><span>classified / browser-only challenge</span></div>
+    <div class="ctf-body"><p class="micro-label">OPERATOR CHALLENGE / 01</p><h2>Frame the defence.</h2><p>A legacy HTTP response header tells browsers whether a page may be embedded in a frame. Enter its exact header name in lowercase.</p><form id="ctf-form"><label><span class="prompt">$</span><input id="ctf-answer" type="text" autocomplete="off" spellcheck="false" placeholder="header-name"></label><button class="button button-primary" type="submit"><span>Validate answer</span><b>↵</b></button></form><p id="ctf-result" class="ctf-result" aria-live="polite">Challenge runs entirely in your browser.</p></div>
+  </dialog>
+  <script src="portfolio-features.js"></script>
+  <script src="evidence-core.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

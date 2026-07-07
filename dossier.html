@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Romil Patel — VAPT Investigation Dossier</title>
+  <style>
+    :root { color-scheme: dark; --bg:#090d0c; --panel:#111714; --line:#2a342e; --text:#eef3ef; --muted:#9aa69f; --acid:#c7ff41; --mono:Consolas, "SFMono-Regular", monospace; --sans:Inter, system-ui, sans-serif; }
+    * { box-sizing: border-box; } body { margin:0; color:var(--text); background:var(--bg); font-family:var(--sans); } main { width:min(980px, calc(100% - 32px)); margin:0 auto; padding:48px 0; }
+    header, section { border:1px solid var(--line); background:rgba(255,255,255,.018); } header { padding:42px; } section { margin-top:18px; padding:30px; }
+    p { color:var(--muted); line-height:1.75; } h1 { margin:10px 0 12px; font-size:clamp(42px, 7vw, 76px); line-height:.9; letter-spacing:-.06em; } h2 { margin:0 0 22px; font-size:28px; } h3 { margin:0 0 8px; }
+    .kicker, dt, th { color:var(--acid); font:10px var(--mono); letter-spacing:.14em; text-transform:uppercase; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; } article { border:1px solid var(--line); padding:22px; } ul { margin:0; padding-left:18px; color:var(--muted); line-height:1.8; }
+    dl { display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin:30px 0 0; } dd { margin:8px 0 0; font-weight:700; }
+    table { width:100%; border-collapse:collapse; } td, th { padding:13px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } td { color:var(--muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; } a, button { border:1px solid var(--line); color:var(--text); background:transparent; padding:12px 14px; font:11px var(--mono); text-decoration:none; text-transform:uppercase; cursor:pointer; } a.primary, button.primary { color:#071007; border-color:var(--acid); background:var(--acid); }
+    @media print { body { color:#111; background:#fff; } main { width:100%; padding:0; } header, section, article { border-color:#ccc; background:#fff; } p, li, td { color:#333; } .actions { display:none; } }
+    @media (max-width:720px) { .grid, dl { grid-template-columns:1fr; } header, section { padding:24px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="kicker">VAPT investigation dossier</p>
+      <h1>Romil Patel</h1>
+      <p>Security Researcher · VAPT / Web Security · Bug Bounty · DFIR Builder · Ahmedabad, India</p>
+      <dl>
+        <div><dt>Focus</dt><dd>VAPT</dd></div>
+        <div><dt>Method</dt><dd>Evidence-first</dd></div>
+        <div><dt>Projects</dt><dd>BountyForge + PHANTOM</dd></div>
+        <div><dt>Community</dt><dd>Microsoft Student Ambassador Alumnus</dd></div>
+      </dl>
+      <div class="actions">
+        <button class="primary" onclick="window.print()">Print / Save PDF</button>
+        <a href="index.html">Back to portfolio</a>
+        <a href="https://www.linkedin.com/in/romilpatel1998/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/romilp619" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional summary</h2>
+      <p>VAPT practitioner and security researcher focused on authorized web application testing, attack-surface discovery, vulnerability validation, and clean remediation reporting. I prefer manual verification over noisy scanner output: every finding should explain the problem, evidence, impact, affected scope, and fix.</p>
+    </section>
+
+    <section>
+      <h2>VAPT methodology</h2>
+      <div class="grid">
+        <article><h3>01 — Scope</h3><p>Confirm authorization, test limits, safe windows, contacts, and prohibited actions before any assessment.</p></article>
+        <article><h3>02 — Recon</h3><p>Map subdomains, live hosts, services, endpoints, JavaScript, parameters, screenshots, and public exposures.</p></article>
+        <article><h3>03 — Validate</h3><p>Manually test OWASP classes, access control, auth/session, business logic, APIs, misconfiguration, and impact paths.</p></article>
+        <article><h3>04 — Report</h3><p>Provide evidence, risk, reproduction, CVSS/CWE where useful, remediation guidance, and retest notes.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected operations</h2>
+      <table>
+        <tr><th>Project</th><th>Signal</th><th>Role</th></tr>
+        <tr><td>BountyForge Toolkit</td><td>Eight-stage recon-to-report workflow for authorized VAPT and bug bounty work.</td><td>Creator / Security tooling</td></tr>
+        <tr><td>PHANTOM DFIR</td><td>Adversarial, self-verifying forensic agent for evidence reasoning and false-positive reduction.</td><td>Creator / DFIR engineering</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Core stack</h2>
+      <ul>
+        <li>Burp Suite, Nmap, Nuclei, subfinder, httpx, naabu, dirsearch, Metasploit</li>
+        <li>OWASP Top 10, API testing, IDOR/BOLA, authentication/session review, security headers, exposure mapping</li>
+        <li>Python, JavaScript, Bash, GitHub, automation, report generation, evidence handling</li>
+        <li>DFIR: Volatility, Sleuth Kit, tshark, memory/disk/network analysis</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Credentials and platforms</h2>
+      <ul>
+        <li>Certified Network Security Practitioner — The SecOps Group</li>
+        <li>Jr Penetration Tester — TryHackMe</li>
+        <li>Microsoft Student Ambassador Alumnus</li>
+        <li>PentesterLab: Romil_Patel · TryHackMe: romil0xsec</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
