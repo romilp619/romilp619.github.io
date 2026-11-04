@@ -46,6 +46,12 @@ img { max-width: 100%; }
 .primary-nav .platform-link:hover { transform: translateY(-2px); color: var(--text); border-color: rgba(199,255,65,.5); background: rgba(199,255,65,.045); }
 .primary-nav .tryhackme-link i { color: #fff; background: #c11111; }
 .primary-nav .tryhackme-link:hover { border-color: rgba(232,40,40,.55); background: rgba(193,17,17,.07); }
+.platform-link i svg { width: 13px; height: 13px; fill: currentColor; }
+.platform-link i img { width: 16px; height: 16px; display: block; }
+.primary-nav .hackthebox-link i { color: #111927; background: #9fef00; }
+.primary-nav .hackthebox-link:hover { border-color: rgba(159,239,0,.55); background: rgba(159,239,0,.07); }
+.primary-nav .kernelkittens-link i { background: #101d2d; }
+.primary-nav .kernelkittens-link:hover { border-color: rgba(49,92,244,.6); background: rgba(49,92,244,.1); }
 .primary-nav .nav-cta { padding: 13px 16px; color: var(--acid); border: 1px solid rgba(199,255,65,.35); background: rgba(199,255,65,.04); }
 .nav-cta span { margin-left: 12px; }
 .menu-toggle { display: none; border: 0; background: none; }
@@ -293,6 +299,16 @@ body.modal-open #signal-canvas, body.modal-open .evidence-core { animation-play-
   .brand-copy { display: none; }
   .nav-platforms { padding-left: 8px; }
   .primary-nav .platform-link span { display: none; }
+}
+
+/* Four platform badges need a tighter nav before the mobile breakpoint. */
+@media (min-width: 781px) and (max-width: 1150px) {
+  .primary-nav { gap: 11px; }
+  .nav-platforms { gap: 5px; padding-left: 7px; }
+  .primary-nav .platform-link { gap: 0; padding: 0 5px; }
+  .primary-nav .platform-link b { display: none; }
+  .primary-nav .nav-cta { padding: 13px 12px; }
+  .nav-cta span { margin-left: 8px; }
 }
 
 @media (max-width: 780px) {
