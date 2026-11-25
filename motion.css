@@ -1,0 +1,152 @@
+/* Cinematic scroll layer. Static and fully readable without JS or with reduced
+   motion; motion.js adds pinning and scrubbing on top. */
+
+/* Browser scroll anchoring "corrects" the scroll position whenever content above the
+   viewport changes size. Pinned sections swap in and out of flow as they pin and unpin,
+   so anchoring yanked the page away from where the scrollbar put it. Off for this page. */
+html, body { overflow-anchor: none; }
+
+/* ---------- Hero: the Core loop ---------- */
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% 50%; opacity: .92; }
+@media (max-width: 780px) { .hero-video { object-position: 76% 50%; opacity: .55; } }
+
+/* ---------- Statement: words come into focus ---------- */
+.statement { position: relative; max-width: var(--max); min-height: 100vh; margin: 0 auto; display: grid; place-content: center; padding: 120px clamp(28px, 7vw, 120px); border-inline: 1px solid var(--line); overflow: hidden; }
+.statement::before { position: absolute; inset: -20%; background: radial-gradient(40% 35% at 70% 40%, rgba(199,255,65,.10), transparent 70%), radial-gradient(35% 30% at 25% 70%, rgba(78,125,255,.10), transparent 70%); content: ""; pointer-events: none; animation: statement-drift 18s ease-in-out infinite alternate; }
+@keyframes statement-drift { to { transform: translate3d(-4%, 3%, 0) scale(1.08); } }
+.statement-kicker { position: relative; margin: 0 0 34px; color: var(--acid); font: 11px/1 var(--mono); letter-spacing: .3em; }
+.statement-text { position: relative; max-width: 1100px; margin: 0; color: var(--text); font-size: clamp(34px, 5.6vw, 84px); font-weight: 600; line-height: 1.08; letter-spacing: -.035em; }
+.statement-text em { color: var(--acid); font-style: normal; }
+.statement-text .word { display: inline-block; will-change: filter, opacity; }
+
+/* ---------- Proof strip as overlapping rings ---------- */
+.proof-strip { display: flex !important; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0 !important; padding: 90px 24px !important; }
+.proof-strip .proof-item { position: relative; display: grid; place-content: center; justify-items: center; width: clamp(200px, 19vw, 270px); aspect-ratio: 1; margin-inline: clamp(-34px, -2vw, -14px); padding: 0 !important; border: 1px solid rgba(228,239,231,.22) !important; border-radius: 50%; background: radial-gradient(circle at 50% 35%, rgba(199,255,65,.06), transparent 65%); text-align: center; }
+.proof-strip .proof-item::after { position: absolute; inset: 9px; border: 1px dashed rgba(199,255,65,.16); border-radius: 50%; content: ""; animation: ring-turn 40s linear infinite; }
+.proof-strip .proof-item:nth-child(even)::after { animation-direction: reverse; }
+@keyframes ring-turn { to { transform: rotate(360deg); } }
+/* Number and its + sit on one line; the label wraps below. */
+.proof-strip .proof-item { display: flex; flex-wrap: wrap; justify-content: center; align-content: center; }
+.proof-strip .proof-item p { flex: 0 0 100%; max-width: none; margin: 10px 0 0; padding: 0 36px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+@media (max-width: 780px) { .proof-strip .proof-item { width: 46vw; margin: -10px; } }
+
+/* ---------- The journey (Recon) and the breach ---------- */
+.journey, .breach { position: relative; max-width: var(--max); margin: 0 auto; border-inline: 1px solid var(--line); }
+.journey-stage, .breach-stage { position: relative; height: 100vh; min-height: 560px; overflow: hidden; background: #000; }
+.scrub-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* The corridor sits in the right of the stage and fades in from black, so the step list is on clean black. */
+.journey .scrub-video { left: auto; right: 0; width: 55%; object-fit: cover; object-position: 50% 50%; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 30%); mask-image: linear-gradient(90deg, transparent 0, #000 30%); }
+.journey-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.7), transparent 30%); pointer-events: none; }
+.journey-copy { position: absolute; z-index: 2; left: clamp(28px, 6vw, 92px); top: 50%; width: min(480px, 44vw); transform: translateY(-50%); }
+.journey-copy h2 { margin: 18px 0 34px; font-size: clamp(34px, 3.6vw, 56px); line-height: 1.02; letter-spacing: -.035em; }
+.journey-copy h2 em { color: var(--acid); font-style: normal; }
+.journey-steps { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.journey-steps li { display: grid; grid-template-columns: 38px 1fr; gap: 14px; padding: 12px 14px; border-left: 2px solid transparent; opacity: .38; transition: opacity .35s, border-color .35s, background .35s; }
+.journey-steps li span { color: var(--acid); font: 11px/1.9 var(--mono); }
+.journey-steps li b { display: block; font-size: 18px; letter-spacing: -.01em; }
+.journey-steps li p { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.journey-steps li.is-active { opacity: 1; border-left-color: var(--acid); background: linear-gradient(90deg, rgba(199,255,65,.07), transparent); }
+.journey-progress { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 2px; background: rgba(228,239,231,.08); }
+.journey-progress i { display: block; width: 0; height: 100%; background: var(--acid); box-shadow: 0 0 12px rgba(199,255,65,.6); }
+
+.breach-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.5) 38%, transparent 70%); pointer-events: none; }
+/* The Seedance pane is centred in its own frame, so the video sits in the right of the
+   stage and fades in from black; the tagline keeps clean space on the left. */
+/* The sphere clip and the stage are both pure black, so there is no box edge and no blend mode is needed
+   (a blend mode on a scrubbed video costs a compositing pass on every frame). */
+.breach .scrub-video { left: auto; right: 0; width: 64%; object-fit: cover; object-position: 50% 50%; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 24%); mask-image: linear-gradient(90deg, transparent 0, #000 24%); }
+.breach-title { position: absolute; z-index: 2; left: clamp(28px, 6vw, 92px); top: 50%; width: min(560px, 38vw); margin: 0; transform: translateY(-50%); font-size: clamp(34px, 3.7vw, 56px); line-height: 1.02; letter-spacing: -.04em; }
+.breach-line { display: block; }
+.breach-fix { color: var(--acid); }
+
+@media (max-width: 780px) {
+  .journey .scrub-video { left: 0; right: 0; width: 100%; object-position: 50% 50%; -webkit-mask-image: none; mask-image: none; }
+  .journey-shade { background: linear-gradient(0deg, rgba(0,0,0,.95) 30%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.2)); }
+  .journey-copy { top: auto; bottom: 28px; width: auto; right: 22px; left: 22px; transform: none; }
+  .journey-copy h2 { margin: 10px 0 16px; }
+  .journey-steps li { padding: 7px 10px; }
+  .journey-steps li p { display: none; }
+  .breach-shade { background: linear-gradient(0deg, rgba(0,0,0,.9) 25%, transparent 70%); }
+  .breach .scrub-video { left: 0; right: 0; width: 100%; object-fit: cover; object-position: 50% 38%; -webkit-mask-image: none; mask-image: none; } /* full-bleed on the burst */
+  .breach-title { top: auto; bottom: 48px; left: 22px; right: 22px; width: auto; transform: none; }
+}
+
+/* ---------- Recon log ---------- */
+.recon-log { position: relative; max-width: var(--max); margin: 0 auto; border-inline: 1px solid var(--line); }
+.log-frame { display: grid; grid-template-columns: minmax(240px, .8fr) 2fr; align-items: center; gap: clamp(24px, 4vw, 64px); min-height: 100vh; padding: 80px clamp(28px, 6vw, 92px); }
+.log-head h2 { margin: 16px 0 0; font-size: clamp(34px, 3.6vw, 56px); line-height: 1.02; letter-spacing: -.035em; }
+.log-window { position: relative; height: min(64vh, 560px); overflow: hidden; border: 1px solid var(--line-strong); background: rgba(7,10,9,.85); }
+.log-window::before { position: absolute; z-index: 2; left: 0; right: 0; top: 50%; height: 46px; margin-top: -23px; border-block: 1px solid rgba(199,255,65,.45); background: rgba(199,255,65,.06); content: ""; pointer-events: none; }
+.log-window::after { position: absolute; z-index: 3; inset: 0; background: linear-gradient(180deg, rgba(7,10,9,1) 0%, transparent 22%, transparent 78%, rgba(7,10,9,1) 100%); content: ""; pointer-events: none; }
+.log-cols, .log-rows li { display: grid; grid-template-columns: 92px 1.1fr 1.6fr 86px; align-items: center; gap: 14px; padding: 0 22px; }
+.log-cols { position: relative; z-index: 4; height: 40px; border-bottom: 1px solid var(--line); background: rgba(7,10,9,.96); color: #66736b; font: 9px var(--mono); letter-spacing: .16em; }
+.log-rows { margin: 0; padding: calc(min(64vh, 560px) / 2 - 63px) 0; list-style: none; will-change: transform; }
+.log-rows li { height: 46px; color: #7f8b84; font: 12px var(--mono); transition: color .25s; }
+.log-rows li span { color: #5d6962; font-size: 10px; letter-spacing: .14em; }
+.log-rows li b { color: inherit; font-weight: 500; }
+.log-rows li em { overflow: hidden; color: #5d6962; font-style: normal; text-overflow: ellipsis; white-space: nowrap; }
+.log-rows li strong { justify-self: end; color: #5d6962; font-size: 9px; font-weight: 500; letter-spacing: .14em; }
+.log-rows li.is-hot { color: var(--text); }
+.log-rows li.is-hot span, .log-rows li.is-hot strong { color: var(--acid); }
+@media (max-width: 780px) {
+  .log-frame { grid-template-columns: 1fr; min-height: auto; padding: 70px 22px; }
+  .log-cols, .log-rows li { grid-template-columns: 70px 1fr 64px; }
+  .log-cols span:nth-child(3), .log-rows li em { display: none; }
+}
+
+/* ---------- RP zoom: fly through the counter of the P ---------- */
+.rp-zoom { position: relative; max-width: var(--max); margin: 0 auto; border-inline: 1px solid var(--line); }
+.rp-stage { position: relative; display: grid; place-items: center; height: 100vh; overflow: hidden; background: #000; }
+/* The mark is vector SVG: the zoom animates the viewBox, so the browser redraws crisp
+   outlines every frame instead of scaling a huge bitmap layer. */
+.rp-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.rp-glyphs { fill: var(--acid); font-family: var(--sans); font-size: 300px; font-weight: 800; letter-spacing: -.06em; }
+.rp-caption { position: absolute; bottom: 12vh; margin: 0; color: var(--muted); font: 11px var(--mono); letter-spacing: .3em; }
+
+/* ---------- Orbit index of builds ---------- */
+.builds-orbit { position: relative; width: min(620px, 82vw); aspect-ratio: 1; margin: 30px auto 110px; --r: min(255px, 34vw); --spin: 0deg; }
+.builds-orbit::before, .builds-orbit::after { position: absolute; inset: 9%; border: 1px dashed rgba(228,239,231,.16); border-radius: 50%; content: ""; }
+.builds-orbit::after { inset: 27%; border-style: solid; border-color: rgba(199,255,65,.12); }
+.builds-core { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 6px; text-align: center; }
+.builds-core span { color: #66736b; font: 10px var(--mono); letter-spacing: .3em; }
+.builds-core b { color: var(--acid); font-size: 64px; line-height: 1; letter-spacing: -.04em; }
+.builds-core em { color: var(--muted); font-size: 12px; font-style: normal; }
+.builds-ring { position: absolute; inset: 0; }
+.build-card { --a: calc(var(--i) * 360deg / 7 - 90deg); position: absolute; left: 50%; top: 50%; display: grid; gap: 4px; width: 152px; padding: 12px 14px; border: 1px solid var(--line-strong); background: rgba(9,13,12,.92); backdrop-filter: blur(8px); transform: translate(-50%, -50%) rotate(calc(var(--a) + var(--spin))) translateX(var(--r)) rotate(calc(-1 * (var(--a) + var(--spin)))); transition: border-color .25s, background .25s; }
+.build-card b { font-size: 14px; letter-spacing: -.01em; }
+.build-card span { color: var(--muted); font-size: 11px; line-height: 1.35; }
+.build-card:hover { border-color: rgba(199,255,65,.6); background: rgba(14,20,17,.96); }
+.build-card:nth-child(1) { --i: 0; } .build-card:nth-child(2) { --i: 1; } .build-card:nth-child(3) { --i: 2; } .build-card:nth-child(4) { --i: 3; } .build-card:nth-child(5) { --i: 4; } .build-card:nth-child(6) { --i: 5; } .build-card:nth-child(7) { --i: 6; }
+@media (max-width: 780px) {
+  .builds-orbit { width: auto; aspect-ratio: auto; margin: 10px 0 70px; }
+  .builds-orbit::before, .builds-orbit::after { display: none; }
+  .builds-core { position: static; margin-bottom: 20px; }
+  .builds-ring { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .build-card { position: static; width: auto; transform: none; }
+}
+
+/* ---------- Contact: the closing scan ---------- */
+.contact-section { position: relative; overflow: hidden; }
+/* The monolith fills the open top-left area (headline top-right, terminal bottom-left) and
+   fades out at its foot, well above the terminal card. */
+.contact-video { position: absolute; z-index: 0; left: 0; top: 0; width: 52%; height: 62%; object-fit: contain; object-position: 50% 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 96%); mask-image: linear-gradient(180deg, #000 55%, transparent 96%); }
+/* The scan replaces the old decorative orbit; on desktop it keeps its grid cell, which puts
+   the headline on the right and leaves the top-left open for the monolith. */
+.contact-section .contact-orbit { visibility: hidden; }
+.contact-section > :not(.contact-video) { position: relative; z-index: 1; }
+@media (max-width: 780px) {
+  /* Phone: the scan keeps its own shape (so its fade-out is visible) and the copy starts
+     below the point where it has fully faded. */
+  .contact-video { width: 100%; height: auto; aspect-ratio: 980 / 1080; }
+  .contact-section { padding-top: calc((100vw - 24px) * 1.2); }
+  /* The hidden 500px orbit must not take part in the one-column layout, or it widens the
+     column past the screen and the headline gets cut off. */
+  .contact-section > .contact-orbit { position: absolute; }
+}
+
+/* ---------- Reduced motion: everything static and visible ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .statement::before, .proof-strip .proof-item::after { animation: none; }
+  .journey-steps li { opacity: 1; }
+}

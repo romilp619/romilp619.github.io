@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Romil Patel — Cybersecurity researcher, DFIR builder, penetration tester, and creator of PHANTOM DFIR and BountyForge Toolkit.">
-  <meta name="theme-color" content="#080b0b">
+  <meta name="theme-color" content="#000000">
   <meta property="og:title" content="Romil Patel — Cybersecurity Researcher">
   <meta property="og:description" content="Evidence-first security research, DFIR engineering, threat hunting, and offensive tooling.">
   <meta property="og:image" content="assets/forensic-hero.png">
   <title>Romil Patel — Cybersecurity Researcher</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23080b0b%22/><path d=%22M25 26h30c13 0 21 7 21 19 0 9-5 15-13 18l16 13H62L49 65h-8v11H25zm16 13v13h13c5 0 8-2 8-7s-3-6-8-6z%22 fill=%22%23c7ff41%22/></svg>">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="motion.css">
 </head>
 <body>
   <canvas id="signal-canvas" aria-hidden="true"></canvas>
@@ -49,7 +51,9 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-image" src="assets/forensic-hero.png" alt="Abstract forensic evidence network with chartreuse and blue signal paths">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/motion/core-poster.jpg" aria-hidden="true">
+        <source src="assets/motion/core-loop.mp4" type="video/mp4">
+      </video>
       <div class="hero-vignette" aria-hidden="true"></div>
       <div class="hero-content">
         <div class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR VAPT &amp; OFFENSIVE SECURITY</div>
@@ -60,12 +64,6 @@
           <a class="button button-primary" href="#vapt-ops"><span>View VAPT operations</span><b>↘</b></a>
           <a class="button button-ghost" href="https://github.com/romilp619" target="_blank" rel="noreferrer"><span>GitHub profile</span><b>↗</b></a>
         </div>
-      </div>
-      <div class="evidence-core" aria-label="Interactive three-dimensional forensic evidence visualization">
-        <canvas id="evidence-core-canvas"></canvas>
-        <div class="core-hud core-hud-top"><span>ATTACK SURFACE / 01</span><b>AUTHORIZED</b></div>
-        <div class="core-hud core-hud-bottom"><span>MOVE POINTER TO ENUMERATE</span><b>EVIDENCE-LED</b></div>
-        <i class="core-corner corner-a"></i><i class="core-corner corner-b"></i><i class="core-corner corner-c"></i><i class="core-corner corner-d"></i>
       </div>
       <aside class="identity-card" aria-label="Profile summary">
         <div class="identity-head">
@@ -82,6 +80,11 @@
         <div class="identity-foot"><span>Microsoft Student Ambassador Alumnus</span><strong id="operator-badge" class="operator-badge" hidden>OPERATOR VERIFIED</strong><i></i></div>
       </aside>
       <div class="hero-index"><span>01</span><i></i><span>FIELD NOTES / 2026</span></div>
+    </section>
+
+    <section class="statement" aria-label="Who I am">
+      <p class="statement-kicker">WHOAMI</p>
+      <p class="statement-text" data-focus>Security researcher. Bug bounty hunter. <em>Builder of the tools that find bugs faster.</em></p>
     </section>
 
     <section class="proof-strip" aria-label="Key proof points">
@@ -112,6 +115,37 @@
         <article><span>02</span><h3>Recon &amp; Attack Surface</h3><p>Subdomains, live services, endpoints, parameters, JavaScript intelligence, and exposure mapping.</p></article>
         <article><span>03</span><h3>Vulnerability Validation</h3><p>Hypothesis-driven testing, false-positive elimination, CWE/CVSS classification, and reproducible evidence.</p></article>
         <article><span>04</span><h3>DFIR &amp; Engineering</h3><p>Memory, disk and PCAP analysis, Python automation, multi-agent systems, MCP tooling, and secure reporting.</p></article>
+      </div>
+    </section>
+
+    <section id="method" class="journey" aria-labelledby="journey-title">
+      <div class="journey-stage">
+        <video class="scrub-video" muted playsinline preload="none" poster="assets/motion/recon-poster-start.jpg" data-poster-end="assets/motion/recon-poster.jpg" aria-hidden="true" data-scrub>
+          <source src="assets/motion/recon-scrub.mp4" type="video/mp4">
+        </video>
+        <div class="journey-shade" aria-hidden="true"></div>
+        <div class="journey-copy">
+          <p class="micro-label">THE METHOD / AUTHORIZED ONLY</p>
+          <h2 id="journey-title">Map the surface<br><em>before you touch it.</em></h2>
+          <ol class="journey-steps">
+            <li><span>01</span><div><b>Scope</b><p>Authorization, boundaries, test windows and forbidden actions.</p></div></li>
+            <li><span>02</span><div><b>Recon</b><p>Subdomains, live hosts, services, endpoints, parameters, JavaScript.</p></div></li>
+            <li><span>03</span><div><b>Test</b><p>Access control, auth and session, IDOR, SSRF, injection, business logic.</p></div></li>
+            <li><span>04</span><div><b>Validate</b><p>Reproducible proof, real impact, false positives removed.</p></div></li>
+            <li><span>05</span><div><b>Report</b><p>Evidence, CWE and CVSS, remediation, retest.</p></div></li>
+          </ol>
+        </div>
+        <div class="journey-progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <section class="breach" aria-labelledby="breach-title">
+      <div class="breach-stage">
+        <video class="scrub-video" muted playsinline preload="none" poster="assets/motion/breach-poster-start.jpg" data-poster-end="assets/motion/breach-poster.jpg" aria-hidden="true" data-scrub>
+          <source src="assets/motion/breach-scrub.mp4" type="video/mp4">
+        </video>
+        <div class="breach-shade" aria-hidden="true"></div>
+        <h2 id="breach-title" class="breach-title"><span class="breach-line">I break things on purpose,</span><span class="breach-line breach-fix">then write the fix.</span></h2>
       </div>
     </section>
 
@@ -151,10 +185,57 @@
       </div>
     </section>
 
+    <section class="recon-log" aria-labelledby="log-title">
+      <div class="log-frame">
+        <div class="log-head">
+          <p class="micro-label">ARSENAL / LIVE INDEX</p>
+          <h2 id="log-title">Tools, builds, proof.</h2>
+        </div>
+        <div class="log-window">
+          <div class="log-cols" aria-hidden="true"><span>TYPE</span><span>NAME</span><span>DETAIL</span><span>STATUS</span></div>
+          <ol class="log-rows">
+          <li><span>TOOL</span><b>Burp Suite</b><em>manual web testing, intercept, repeater</em><strong>IN USE</strong></li>
+          <li><span>TOOL</span><b>Nuclei</b><em>template-driven exposure checks</em><strong>IN USE</strong></li>
+          <li><span>TOOL</span><b>subfinder / httpx / naabu</b><em>recon pipeline: hosts, probes, ports</em><strong>IN USE</strong></li>
+          <li><span>TOOL</span><b>Volatility / Sleuth Kit</b><em>memory and disk forensics</em><strong>IN USE</strong></li>
+          <li><span>BUILD</span><b>BountyForge Toolkit</b><em>eight-stage recon-to-report pipeline</em><strong>SHIPPED</strong></li>
+          <li><span>BUILD</span><b>Phantom DFIR</b><em>self-verifying forensic agent</em><strong>SHIPPED</strong></li>
+          <li><span>BUILD</span><b>upshift</b><em>autonomous framework-migration agent</em><strong>SHIPPED</strong></li>
+          <li><span>CERT</span><b>CNSP</b><em>The SecOps Group</em><strong>EARNED</strong></li>
+          <li><span>CERT</span><b>Jr Penetration Tester</b><em>TryHackMe</em><strong>EARNED</strong></li>
+          <li><span>CERT</span><b>Azure AI Fundamentals</b><em>Microsoft</em><strong>EARNED</strong></li>
+          <li><span>PLATFORM</span><b>HackerOne / Bugcrowd</b><em>bug bounty research</em><strong>ACTIVE</strong></li>
+          <li><span>PLATFORM</span><b>Hack The Box / TryHackMe</b><em>offensive practice</em><strong>ACTIVE</strong></li>
+          <li><span>TEAM</span><b>Kernel Kittens</b><em>CTF team</em><strong>ACTIVE</strong></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="rp-zoom" aria-hidden="true">
+      <div class="rp-stage">
+        <svg class="rp-svg" viewBox="0 0 1000 562" preserveAspectRatio="xMidYMid meet"><text class="rp-glyphs" x="500" y="281" text-anchor="middle" dominant-baseline="central">RP</text></svg>
+        <p class="rp-caption">SELECTED OPERATIONS</p>
+      </div>
+    </section>
+
     <section id="projects" class="section projects-section">
       <div class="section-heading reveal">
         <div><div class="section-kicker"><span>04</span> SELECTED OPERATIONS</div><h2>Two systems.<br><em>One evidence discipline.</em></h2></div>
         <p>Only the work that best represents how I think, build, and investigate.</p>
+      </div>
+
+      <div class="builds-orbit" aria-label="All builds">
+        <div class="builds-core"><span>BUILDS</span><b>7</b><em>open source</em></div>
+        <div class="builds-ring">
+            <a class="build-card" href="https://github.com/romilp619/Phantom-DFIR" target="_blank" rel="noreferrer"><b>Phantom DFIR</b><span>Self-verifying forensic agent</span></a>
+            <a class="build-card" href="https://github.com/romilp619/BountyForge-Toolkit" target="_blank" rel="noreferrer"><b>BountyForge</b><span>Recon-to-report pipeline</span></a>
+            <a class="build-card" href="https://github.com/romilp619/upshift" target="_blank" rel="noreferrer"><b>upshift</b><span>Autonomous migration agent</span></a>
+            <a class="build-card" href="https://github.com/romilp619/PactCue" target="_blank" rel="noreferrer"><b>PactCue</b><span>PDFs to guided signing</span></a>
+            <a class="build-card" href="https://github.com/romilp619/signalroom-ai" target="_blank" rel="noreferrer"><b>signalroom-ai</b><span>Risk detection in Slack</span></a>
+            <a class="build-card" href="https://github.com/romilp619/solana-guard-x" target="_blank" rel="noreferrer"><b>solana-guard-x</b><span>Solana program security</span></a>
+            <a class="build-card" href="https://github.com/romilp619/ai-security-advisory-assistant" target="_blank" rel="noreferrer"><b>AI Security Advisory</b><span>Advisories to action</span></a>
+        </div>
       </div>
 
       <article class="project project-phantom reveal">
@@ -304,6 +385,9 @@
     </section>
 
     <section id="contact" class="section contact-section">
+      <video class="contact-video" muted playsinline preload="none" poster="assets/motion/contact-scan-poster-start.jpg" data-poster-end="assets/motion/contact-scan-poster.jpg" aria-hidden="true">
+        <source src="assets/motion/contact-scan.mp4" type="video/mp4">
+      </video>
       <div class="contact-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="contact-copy reveal">
         <div class="section-kicker"><span>09</span> ESTABLISH CONNECTION</div>
@@ -354,5 +438,10 @@
   <script src="portfolio-features.js"></script>
   <script src="evidence-core.js"></script>
   <script src="script.js"></script>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="motion.js"></script>
 </body>
 </html>
